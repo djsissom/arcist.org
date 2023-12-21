@@ -1,0 +1,444 @@
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin,greek);
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:100);
+/* line 11, assets/style/_boilerplate_prefix.scss */
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+/* line 25, assets/style/_boilerplate_prefix.scss */
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+/* line 34, assets/style/_boilerplate_prefix.scss */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+/* line 49, assets/style/_boilerplate_prefix.scss */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+/* line 62, assets/style/_boilerplate_prefix.scss */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+/* line 72, assets/style/_boilerplate_prefix.scss */
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+/* line 80, assets/style/_boilerplate_prefix.scss */
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+@font-face {
+  font-family: iwona-light;
+  src: url(../fonts/iwonalight-regular.otf);
+}
+
+@font-face {
+  font-family: iwona-light-italic;
+  src: url(../fonts/iwonalight-italic.otf);
+}
+
+@font-face {
+  font-family: iwona-bold;
+  src: url(../fonts/iwona-bold.otf);
+}
+
+/* line 1, assets/style/_layout.scss */
+#content {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 7, assets/style/_layout.scss */
+footer {
+  text-align: center;
+  min-height: 10em;
+  margin-top: 4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* line 1, assets/style/_index_layout.scss */
+.index {
+  /*
+	* {
+		border: 1px dashed red;
+	}
+	*/
+}
+
+/* line 8, assets/style/_index_layout.scss */
+.index header {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  container-type: inline-size;
+  container-name: header;
+}
+
+/* line 16, assets/style/_index_layout.scss */
+.index header h1 {
+  display: flex;
+  justify-content: center;
+}
+
+/* line 21, assets/style/_index_layout.scss */
+.index header svg {
+  height: 100%;
+  width: 2.5em;
+  margin-right: 0.3em;
+}
+
+/* line 27, assets/style/_index_layout.scss */
+.index header div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* line 34, assets/style/_index_layout.scss */
+.index header div p {
+  text-align: left;
+  line-height: 1;
+  margin: 0;
+}
+
+/* line 40, assets/style/_index_layout.scss */
+.index header h2 {
+  position: relative;
+  border: solid 0.1em;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 50em) {
+  /* line 40, assets/style/_index_layout.scss */
+  .index header h2 {
+    width: 90%;
+  }
+}
+
+@container header (min-width: 50em) {
+  /* line 52, assets/style/_index_layout.scss */
+  .index header h1 {
+    font-size: 5cqw;
+  }
+  /* line 56, assets/style/_index_layout.scss */
+  .index header h2 {
+    font-size: 3.5cqw;
+    padding-top: 2cqw;
+    padding-bottom: 2cqw;
+  }
+}
+
+@container header (max-width: 50em) {
+  /* line 64, assets/style/_index_layout.scss */
+  .index header h1 {
+    font-size: 10cqw;
+  }
+  /* line 68, assets/style/_index_layout.scss */
+  .index header h2 {
+    font-size: 5.5cqw;
+    padding-top: 3cqw;
+    padding-bottom: 3cqw;
+  }
+}
+
+/* line 75, assets/style/_index_layout.scss */
+.index header span:last-child::before {
+  content: '\A';
+  white-space: pre;
+}
+
+/* line 80, assets/style/_index_layout.scss */
+.index header h2::before,
+.index header h2::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 33.3%;
+  height: 0.1em;
+  background: rgba(10, 3, 15, 0.75);
+  top: 50%;
+}
+
+/* line 90, assets/style/_index_layout.scss */
+.index header h2::before {
+  left: 0;
+  transform: translate(-100%, 0);
+}
+
+/* line 94, assets/style/_index_layout.scss */
+.index header h2::after {
+  right: 0;
+  transform: translate(100%, 0);
+}
+
+/* line 1, assets/style/_style.scss */
+html {
+  background-image: url("../media/images/paper.png");
+}
+
+/* line 5, assets/style/_style.scss */
+body {
+  font-family: "iwona-light", sans-serif;
+  color: rgba(10, 3, 15, 0.75);
+}
+
+/* line 10, assets/style/_style.scss */
+header h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+/* line 15, assets/style/_style.scss */
+header h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+/* line 20, assets/style/_style.scss */
+h1, h2, h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+/* line 25, assets/style/_style.scss */
+footer {
+  background-color: #332B3A;
+  color: #E9E2EE;
+  background-image: url("../media/images/low-contrast-linen.png");
+}
+
+/* line 31, assets/style/_style.scss */
+footer p {
+  font-size: 120%;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Hide visually and from screen readers
+ */
+/* line 9, assets/style/_boilerplate_postfix.scss */
+.hidden {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+/* line 18, assets/style/_boilerplate_postfix.scss */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+/* line 35, assets/style/_boilerplate_postfix.scss */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+/* line 49, assets/style/_boilerplate_postfix.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *	  `contenteditable` attribute is included anywhere else in the document.
+ *	  Otherwise it causes space to appear at the top and bottom of elements
+ *	  that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *	  `:before` to contain the top-margins of child elements.
+ */
+/* line 65, assets/style/_boilerplate_postfix.scss */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+/* line 71, assets/style/_boilerplate_postfix.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print, (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+@media print {
+  /* line 98, assets/style/_boilerplate_postfix.scss */
+  *,
+*:before,
+*:after,
+*:first-letter,
+*:first-line {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster:
+		                           http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  /* line 110, assets/style/_boilerplate_postfix.scss */
+  a,
+a:visited {
+    text-decoration: underline;
+  }
+  /* line 115, assets/style/_boilerplate_postfix.scss */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  /* line 119, assets/style/_boilerplate_postfix.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+	 * Don't show links that are fragment identifiers,
+	 * or use the `javascript:` pseudo protocol
+	 */
+  /* line 128, assets/style/_boilerplate_postfix.scss */
+  a[href^="#"]:after,
+a[href^="javascript:"]:after {
+    content: "";
+  }
+  /* line 133, assets/style/_boilerplate_postfix.scss */
+  pre,
+blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
+	 * Printing Tables:
+	 * http://css-discuss.incutio.com/wiki/Printing_Tables
+	 */
+  /* line 144, assets/style/_boilerplate_postfix.scss */
+  thead {
+    display: table-header-group;
+  }
+  /* line 148, assets/style/_boilerplate_postfix.scss */
+  tr,
+img {
+    page-break-inside: avoid;
+  }
+  /* line 153, assets/style/_boilerplate_postfix.scss */
+  img {
+    max-width: 100% !important;
+  }
+  /* line 157, assets/style/_boilerplate_postfix.scss */
+  p,
+h2,
+h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  /* line 164, assets/style/_boilerplate_postfix.scss */
+  h2,
+h3 {
+    page-break-after: avoid;
+  }
+}
